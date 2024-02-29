@@ -1,0 +1,35 @@
+<% if (flash && flash.err) { %>
+  <p>
+    <ul class="collection">
+      <% Object.keys(flash.err).forEach(function (error) { %>
+        <li class="collection-item">
+          <%= JSON.stringify(flash.err[error]) %>
+        </li>
+      <% }) %>
+    </ul>
+  </p>
+<% } %>
+
+<form ng-controller="ControllerCategoria" ng-init="_csrf = '<%= _csrf %>'">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form-group">
+        <label>Nombre de categoria</label>
+        <input ng-model="nombre_categoria" name="nombre_categoria" type="text" class="form-control border-input" placeholder="Nombre de la categoria" required>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label>Descripción</label>
+        <input ng-model="descripcion" name="descripcion" type="text" class="form-control border-input" placeholder="Descripcion corta..." required>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <br>
+        <button class="btn btn-success btn-raised" type="button" ng-click="addCategoriaentradas()">Añadir</button>
+      </div>
+    </div>
+  </div>
+  <!--  <input type='hidden' name='_csrf' value='<%= _csrf %>'>-->
+</form>

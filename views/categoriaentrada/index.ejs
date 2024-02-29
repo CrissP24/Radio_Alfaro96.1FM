@@ -1,0 +1,32 @@
+<table class="table table-striped" ng-controller="ControllerCategoria" ng-init="getCategoriaentradas()">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Categoria</th>
+      <th>Descripción</th>
+      <th>Creado</th>
+      <th colspan="2">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="ce in categoriasentradas">
+      <th>
+        {{($index+1)}}
+      </th>
+      <td>
+        {{ce.nombre_categoria}}
+      </td>
+      <td>
+        {{ce.descripcion}}
+      </td>
+      <td>
+        {{moment(ce.createdAt).format('LLL')}}
+      </td>
+      <td class="td-actions text-center">
+        <a ng-dblclick="eliminarCategoriaentradas(ce.id)" href="" rel="tooltip" title="Doble click para <%= __('Eliminar') %>">
+          <i class="ti-close"></i>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,350 @@
+<div ng-controller="ControllerPerfil" ng-init="inicializar()">
+  <div class="wrapper">
+    <div class="sidebar" data-background-color="white" data-active-color="danger">
+
+      <!-- Tip 1: you can change the color of the sidebar's background using: data-background-color="white | black"	Tip 2: you can change the color of the active button using the data-active-color="primary | info | success | warning | danger"-->
+
+      <div class="sidebar-wrapper" ng-cloak>
+        <div class="logo">
+          <a href="http://www.creative-tim.com" class="simple-text">
+            <%= usuario.nick %>
+          </a>
+        </div>
+
+        <ul class="nav">
+          <li class="{{click_dashboard? 'active': ''}}">
+            <a href="" ng-click="fnclick_dashboard()">
+              <i class="ti-panel"></i>
+              <p>
+                <%= __('Dashboard') %>
+              </p>
+            </a>
+          </li>
+          <li class="{{publicar? 'active': ''}}">
+            <a href="" ng-click="fnclick_publicar()">
+              <i class="ti-layers"></i>
+              <p>Publicar</p>
+            </a>
+          </li>
+          <li class="{{perfil? 'active': ''}}">
+            <a href="" ng-click="fnclick_perfil()">
+              <i class="ti-user"></i>
+              <p>Perfil</p>
+            </a>
+          </li>
+          <li class="{{click_categoria_entrada? 'active': ''}}">
+            <a href="" ng-click="fnclick_click_categoria_entrada()">
+              <i class="ti-pencil-alt2"></i>
+              <p>Categorias</p>
+            </a>
+          </li>
+          <li title="Visitar blog">
+            <a href="/">
+              <i class="ti-text"></i>
+              <p>Blog</p>
+            </a>
+          </li>
+          <li>
+            <a href="maps.html">
+              <i class="ti-map"></i>
+              <p>Maps</p>
+            </a>
+          </li>
+          <li>
+            <a href="notifications.html">
+              <i class="ti-bell"></i>
+              <p>Notifications</p>
+            </a>
+          </li>
+          <li>
+            <a href="/usuario/signout">
+              <i class="ti-back-right"></i>
+              <p>
+                <%= __('CerrarSession') %>
+              </p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="main-panel">
+
+      <nav class="navbar navbar-default filter-bar live-view">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar bar1"></span>
+              <span class="icon-bar bar2"></span>
+              <span class="icon-bar bar3"></span>
+            </button>
+            <a class="navbar-brand" href="#">Dashboard</a>
+          </div>
+          <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <!--<li>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <i class="ti-panel"></i>
+                  <p>Stats</p>
+                </a>
+              </li>-->
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <i class="ti-bell"></i>
+                  <p class="notification">
+                    {{notificaciones.length}}
+                  </p>
+                  <p>
+                    <%= __('Notificaciones') %>
+                  </p>
+                  <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <li ng-repeat="n in notificaciones">
+                    <a href="">{{n.mensaje}}</a>
+                  </li>
+                </ul>
+              </li>
+              <!--<li>
+                <a href="#">
+                  <i class="ti-settings"></i>
+                  <p>Settings</p>
+                </a>
+              </li>-->
+            </ul>
+
+          </div>
+        </div>
+      </nav>
+
+      <div class="content">
+        <div class="container-fluid">
+
+          <div class="row" ng-show="click_dashboard==true">
+            <div class="col-lg-3 col-sm-6">
+              <div class="card">
+                <div class="content">
+                  <div class="row">
+                    <div class="col-xs-5">
+                      <div class="icon-big icon-warning text-center">
+                        <i class="ti-server"></i>
+                      </div>
+                    </div>
+                    <div class="col-xs-7">
+                      <div class="numbers">
+                        <p>Publicaciones</p>
+                        {{ entradas.entradas.length }}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="footer">
+                    <hr/>
+                    <div class="stats">
+                      <i class="ti-reload"></i>
+                      Updated now
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-6">
+              <div class="card">
+                <div class="content">
+                  <div class="row">
+                    <div class="col-xs-5">
+                      <div class="icon-big icon-success text-center">
+                        <i class="ti-wallet"></i>
+                      </div>
+                    </div>
+                    <div class="col-xs-7">
+                      <div class="numbers">
+                        <p>Ocultos</p>
+                        {{ entradas_ocultas }}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="footer">
+                    <hr/>
+                    <div class="stats">
+                      <i class="ti-calendar"></i>
+                      Last day
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-6">
+              <div class="card">
+                <div class="content">
+                  <div class="row">
+                    <div class="col-xs-5">
+                      <div class="icon-big icon-danger text-center">
+                        <i class="ti-pulse"></i>
+                      </div>
+                    </div>
+                    <div class="col-xs-7">
+                      <div class="numbers">
+                        <p>Activos</p>
+                        {{ (entradas.entradas.length - entradas_ocultas) }}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="footer">
+                    <hr/>
+                    <div class="stats">
+                      <i class="ti-timer"></i>
+                      In the last hour
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+              <div class="card">
+                <div class="content">
+                  <div class="row">
+                    <div class="col-xs-5">
+                      <div class="icon-big icon-info text-center">
+                        <i class="ti-twitter-alt"></i>
+                      </div>
+                    </div>
+                    <div class="col-xs-7">
+                      <div class="numbers">
+                        <p>Followers</p>
+                        +45
+                      </div>
+                    </div>
+                  </div>
+                  <div class="footer">
+                    <hr/>
+                    <div class="stats">
+                      <i class="ti-reload"></i>
+                      Updated now
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row" ng-show="publicar==true">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="content">
+                  <h4 class="title">Publicar</h4>
+                  <%- include ../entrada/nuevo %>
+                  <div class="footer">
+                    <hr>
+                    <div class="stats">
+                      <i class="ti-reload"></i>
+                      {{moment().format()}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row" ng-show="click_dashboard==true">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="content">
+                  <h4 class="title">Publicaciones</h4>
+                  <% include ../components/entrada/listAll %>
+                  <div class="footer">
+                    <hr>
+                    <div class="stats">
+                      <i class="ti-reload" title="Click para actualizar"></i>
+                      {{moment().format('llll')}}
+                    </div>
+
+                    <div class="chart-legend">
+                      <i class="fa fa-circle text-info"></i>
+                      <span title="Activos">
+                        {{ (entradas.entradas.length - entradas_ocultas) }}
+                      </span>
+                      <i class="fa fa-circle text-danger"></i>
+                      <span title="Ocultos">
+                        {{ entradas_ocultas }}
+                      </span>
+                      <i class="fa fa-circle text-warning"></i>
+                      <span title="Total de publicaciones">
+                        {{ entradas.entradas.length }}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row" ng-show="click_categoria_entrada==true">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="content">
+                  <h4 class="title">Registrar una categoria</h4>
+                  <% include ../categoriaentrada/register %>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12">
+              <div class="card">
+                <div class="content">
+                  <h4 class="title">Categorias</h4>
+                  <% include ../categoriaentrada/index %>
+                  <div class="footer">
+                    <hr>
+                    <div class="stats">
+                      <i class="ti-reload" title="Click para actualizar"></i>
+                      {{moment().format('llll')}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row" ng-show="perfil==true">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="content">
+                  <h4 class="title">Perfil</h4>
+                  <% include ../components/usuario/info %>
+                  <div class="footer">
+                    <hr>
+                    <div class="stats">
+                      <i class="ti-reload" title="Click para actualizar"></i>
+                      Ultima actualizacion
+                      <%= usuario.updatedAt %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <% include ../components/footer %>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+
+    demo.initChartist();
+
+    $.notify({
+      icon: 'ti-gift',
+      message: "Welcome to <b>Paper Dashboard</b> - a beautiful Bootstrap freebie for your next project."
+    }, {
+      type: 'success',
+      timer: 4000
+    });
+  });
+</script>

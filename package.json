@@ -1,0 +1,47 @@
+{
+  "name": "site_web_radio_alfaro91.7",
+  "private": true,
+  "version": "1.0.0",
+  "description": "a Sails application for S. Programacion",
+  "keywords": [],
+  "dependencies": {
+    "async": "^3.2.5",
+    "bcrypt": "^5.0.1",
+    "ejs": "^3.1.6",
+    "grunt": "^1.4.3",
+    "grunt-contrib-clean": "^2.0.0",
+    "grunt-contrib-coffee": "^2.0.0",
+    "grunt-contrib-concat": "^2.0.0",
+    "grunt-contrib-copy": "^2.0.0",
+    "grunt-contrib-cssmin": "^3.0.0",
+    "grunt-contrib-jst": "^2.0.0",
+    "grunt-contrib-less": "^2.0.0",
+    "grunt-contrib-uglify": "^5.0.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-sails-linker": "^0.11.4",
+    "grunt-sync": "^1.0.0",
+    "include-all": "^1.0.1",
+    "is.js": "^0.9.0",
+    "moment": "^2.29.1",
+    "moment-timezone": "^0.5.35",
+    "mongodb": "^4.1.0",
+    "nodemailer": "^6.7.2",
+    "rc": "^1.2.8",
+    "sails": "^1.5.9",
+    "sails-disk": "^1.2.1",
+    "sails-generate-scaffold": "^0.0.5",
+    "sails-mongo": "^2.0.0"
+  },
+  "scripts": {
+    "debug": "node debug app.js",
+    "start": "node app.js"
+  },
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "Cristhoper",
+  "license": "ISC"
+}
+

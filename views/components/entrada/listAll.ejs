@@ -1,0 +1,57 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="form-group">
+      <input type="text" class="form-control border-input" placeholder="Buscar" ng-model="search">
+    </div>
+  </div>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th class="text-center">#</th>
+      <th>Titulo</th>
+      <th>Categoria</th>
+      <th>Actualizado</th>
+      <th>Estado</th>
+      <th class="text-right">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="entradas in entradas.entradas | filter:search">
+      <td class="text-center">
+        {{$index + 1}}
+      </td>
+      <td>
+        {{entradas.titulo}}
+      </td>
+      <td>
+        {{entradas.categoria_entrada_ref.nombre_categoria}}
+      </td>
+      <td>
+        {{moment(entradas.updatedAt).fromNow()}}
+      </td>
+      <td>
+        <span class="label label-default" ng-show="entradas.oculto == true">Oculto</span>
+        <span class="label label-success" ng-show="entradas.oculto == false || entradas.oculto == undefined">Visible</span>
+      </td>
+      <td class="td-actions text-right">
+        <a ng-show="(entradas.oculto == true)" ng-click="desocultarEntrada(entradas.id)" href="" rel="tooltip" title="<%= __('Desocultar') %>">
+          <i class="ti-angle-left"></i>
+        </a>
+
+        <a ng-show="(entradas.oculto !== true)" ng-click="ocultarEntrada(entradas.id)" href="" rel="tooltip" title="<%= __('Ocultar') %>">
+          <i class="ti-angle-right"></i>
+        </a>
+
+        <a href="/entrada/showOne/{{entradas.id}}" target="_blank" title="Ver">
+          <i class="ti-eye"></i>
+        </a>
+
+        <a ng-dblclick="eliminarEntrada(entradas.id)" href="" rel="tooltip" title="Doble click para <%= __('Eliminar') %>">
+          <i class="ti-close"></i>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>

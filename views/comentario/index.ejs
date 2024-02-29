@@ -1,0 +1,49 @@
+<!-- Main Wrapper -->
+<div class="wrapper grey-background">
+  <div class="container">
+    <div class="row">
+      <div class="col l12 col m12 col s12 center-align">
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+          <a href="#">Blogs</a>
+          <i class="fa fa-angle-right"></i>
+          About
+          <div class="page-title">
+            Comentarios
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col l12 col m12 col s12">
+        <div class="about z-depth-1">
+          <!-- About Image
+          <img alt="news Image" src="/images/about.jpg" class="responsive-img">-->
+          <div class="col l8 offset-l2 col m12 col s12">
+            <!-- About Detail -->
+            <p>
+
+              <ul class="collection with-header">
+
+                <li class="collection-header">
+                  <h4>Comentarios</h4>
+                </li>
+                <% _.each(comentarios, function(value) { %>
+                  <li class="collection-item">
+                    <div title="Creado <%= value.createdAt %>">
+                      <%= value.cuerpo %>
+                      <a href="/comentario/edit/<%= value.id %>" class="secondary-content" title="Ultima actualizacion <%= value.updatedAt %>">
+                        <i class="material-icons">Editar</i>
+                      </a>
+                    </div>
+                  </li>
+                <% }) %>
+              </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

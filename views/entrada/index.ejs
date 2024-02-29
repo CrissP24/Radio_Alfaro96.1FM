@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <% if (entradas.length <= 0) { %>
+      No hay publicaciones
+    <% } else if (entradas.length == 1) { %>
+      Hay 1 publicación
+    <% } else if (entradas.length > 0) { %>
+      Hay
+      <%= entradas.length %>
+      publicaciones
+    <% } else { %>
+      No hay publicaciones
+    <% } %>
+  </div>
+</div>
+
+<% for (var i = 0; i < entradas.length; i++) { %>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <h2 class="title">
+        <%=: entradas[i].titulo | capitalize %>
+      </h2>
+      <small>
+        <%= entradas[i].entrada_usuario.nick %>
+        <br>
+        <%= entradas[i].updatedAt %>
+      </small>
+      <h5 class="description">
+        <%= entradas[i].resumen %>
+      </h5>
+      <span class="label label-default">
+        <%= entradas[i].categoria_entrada_ref.nombre_categoria %>
+      </span>
+      &nbsp;&nbsp;
+      <a href="/entrada/showOne/<%= entradas[i].id %>" target="_blank">
+        <%= __('ContinuaLeyendo') %>
+      </a>
+      <hr>
+    </div>
+  </div>
+<% } %>

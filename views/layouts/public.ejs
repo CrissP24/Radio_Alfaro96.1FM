@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>
+      <%= _blank('Nombre') %>
+    </title>
+
+    <!-- Viewport mobile tag for sensible mobile support -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'/>
+    <meta charset="UTF-8">
+
+    <!--
+        Stylesheets and Preprocessors
+        ==============================
+
+        You can always bring in CSS files manually with `<link>` tags, or asynchronously
+        using a solution like AMD (RequireJS).  Or, if you like, you can take advantage
+        of Sails' conventional asset pipeline (boilerplate Gruntfile).
+
+        By default, stylesheets from your `assets/styles` folder are included
+        here automatically (between STYLES and STYLES END). Both CSS (.css) and LESS (.less)
+        are supported. In production, your styles will be minified and concatenated into
+        a single file.
+
+        To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
+        For example, here are a few things you could do:
+
+            + Change the order of your CSS files
+            + Import stylesheets from other directories
+            + Use a different or additional preprocessor, like SASS, SCSS or Stylus
+    -->
+
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
+
+    <link rel="stylesheet" href="/assets/styles/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/styles/animate.min.css">
+    <link rel="stylesheet" href="/assets/styles/demo.css">
+    <link rel="stylesheet" href="/assets/styles/material-kit.css">
+    <link rel="stylesheet" href="/assets/styles/importer.css">
+    <link rel="stylesheet" href="/assets/styles/style.css">
+  </head>
+
+  <body ng-app="Blog" class="landing-page">
+    <nav class="navbar navbar-transparent navbar-absolute" role="navigation">
+      <div class="container" ng-controller="ControllerBlog">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">
+            <%= __('Nombre') %>
+          </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navigation-example">
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="/views/acercade.ejs" class="btn">
+                <%= __('Nosotros') %>
+              </a>
+            </li>
+            <li>
+              <a href="/#publicaciones" class="btn">
+                <%= __('Publicaciones') %>
+              </a>
+            </li>
+            <li>
+              <a href="/views/usuario/signin.ejs" class="btn">
+                <%= __('Login') %>
+              </a>
+            </li>
+            <li>
+              <a href="" target="_blank" class="btn btn-simple">
+                <i class="fa fa-twitter"></i>
+              </a>
+            </li>
+            <li>
+              <a href="" target="_blank" class="btn btn-simple">
+                <i class="fa fa-facebook-square"></i>
+              </a>
+            </li>
+            <li>
+              <a href="" target="_blank" class="btn btn-simple">
+                <i class="fa fa-instagram"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="wrapper">
+
+      <div class="header header-filter" style="background-image: url('/images/photo-1423655156442-ccc11daa4e99.jpg');">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <h1 class="title">Semillero de Programación</h1>
+              <h4>Entrenamiento en estrategias de programación, con el propósito de aumentar el nivel en Algoritmia de los equipos que representan a la Universidad de la Amazonia en las Maratones Regionales, Nacionales y Mundiales de Programación.</h4>
+              <br/>
+              <a href="https://www.youtube.com/watch?v=uvFojBYflTk" class="btn btn-danger btn-raised btn-lg">
+                <i class="fa fa-play"></i>
+                Ver video
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="main main-raised">
+        <div class="container">
+          <div class="section section-landing">
+
+            <%- body %>
+
+          </div>
+        </div>
+      </div>
+
+      <% include ../components/footer %>
+
+    </div>
+
+    <!--
+        Client-side Templates
+        ========================
+
+        HTML templates are important prerequisites of modern, rich client applications.
+        To work their magic, frameworks like Backbone, Angular, Ember, and Knockout require
+        that you load these templates client-side.
+
+        By default, your Gruntfile is configured to automatically load and precompile
+        client-side JST templates in your `assets/templates` folder, then
+        include them here automatically (between TEMPLATES and TEMPLATES END).
+
+        To customize this behavior to fit your needs, just edit `tasks/pipeline.js`.
+        For example, here are a few things you could do:
+
+            + Import templates from other directories
+            + Use a different template engine (handlebars, jade, dust, etc.)
+            + Internationalize your client-side templates using a server-side
+              stringfile before they're served.
+    -->
+
+    <!--TEMPLATES-->
+    
+    <!--TEMPLATES END-->
+
+    <!--
+
+      Client-side Javascript
+      ========================
+
+      You can always bring in JS files manually with `script` tags, or asynchronously
+      on the client using a solution like AMD (RequireJS).  Or, if you like, you can
+      take advantage of Sails' conventional asset pipeline (boilerplate Gruntfile).
+
+      By default, files in your `assets/js` folder are included here
+      automatically (between SCRIPTS and SCRIPTS END).  Both JavaScript (.js) and
+      CoffeeScript (.coffee) are supported. In production, your scripts will be minified
+      and concatenated into a single file.
+
+      To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
+      For example, here are a few things you could do:
+
+          + Change the order of your scripts
+          + Import scripts from other directories
+          + Use a different preprocessor, like TypeScript
+
+    -->
+
+    <!--SCRIPTS-->
+    <script src="/assets/js/dependencies/sails.io.js"></script>
+    <script src="/assets/js/angular/angular.min.js"></script>
+    <script src="/assets/js/app_angular/app.js"></script>
+    <script src="/assets/js/app_angular/b_services/service_blog.js"></script>
+    <script src="/assets/js/app_angular/b_services/service_entrada.js"></script>
+    <script src="/assets/js/app_angular/controllers/controller_blog.js"></script>
+    <script src="/assets/js/app_angular/controllers/controller_categoria.js"></script>
+    <script src="/assets/js/app_angular/controllers/controller_evento.js"></script>
+    <script src="/assets/js/app_angular/controllers/controller_home.js"></script>
+    <script src="/assets/js/app_angular/controllers/controller_perfil.js"></script>
+    <script src="/assets/js/app_angular/filters/filter_capitalize.js"></script>
+    <script src="/assets/js/forms/ajquery/jquery.min.js"></script>
+    <script src="/assets/js/forms/bootstrap-checkbox-radio.js"></script>
+    <script src="/assets/js/forms/bootstrap-datepicker.js"></script>
+    <script src="/assets/js/forms/bootstrap-notify.js"></script>
+    <script src="/assets/js/forms/bootstrap.min.js"></script>
+    <script src="/assets/js/forms/chartist.min.js"></script>
+    <script src="/assets/js/forms/demo.js"></script>
+    <script src="/assets/js/forms/login-register.js"></script>
+    <script src="/assets/js/forms/material-kit.js"></script>
+    <script src="/assets/js/forms/material.min.js"></script>
+    <script src="/assets/js/forms/moment-with-locales.min.js"></script>
+    <script src="/assets/js/forms/nouislider.min.js"></script>
+    <script src="/assets/js/forms/paper-dashboard.js"></script>
+    <script src="/assets/js/socket/socket_sails.js"></script>
+    <!--SCRIPTS END-->
+
+    <script type="text/javascript">
+      var header_height;
+      var fixed_section;
+      var floating = false;
+
+      $().ready(function() {
+        suggestions_distance = $("#suggestions").offset();
+        pay_height = $('.fixed-section').outerHeight();
+
+        $(window).on('scroll', materialKit.checkScrollForTransparentNavbar);
+
+        // the body of this function is in assets/material-kit.js
+        materialKit.initSliders();
+      });
+    </script>
+  </body>
+</html>

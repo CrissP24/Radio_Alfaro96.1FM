@@ -1,0 +1,147 @@
+<html lang="es">
+  <head>
+    <title>
+      <%= __('Login') %>
+    </title>
+
+    <!-- Viewport mobile tag for sensible mobile support -->
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta charset="UTF-8">
+    <!--
+        Stylesheets and Preprocessors
+        ==============================
+
+        You can always bring in CSS files manually with `<link>` tags, or asynchronously
+        using a solution like AMD (RequireJS).  Or, if you like, you can take advantage
+        of Sails' conventional asset pipeline (boilerplate Gruntfile).
+
+        By default, stylesheets from your `assets/styles` folder are included
+        here automatically (between STYLES and STYLES END). Both CSS (.css) and LESS (.less)
+        are supported. In production, your styles will be minified and concatenated into
+        a single file.
+
+        To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
+        For example, here are a few things you could do:
+
+            + Change the order of your CSS files
+            + Import stylesheets from other directories
+            + Use a different or additional preprocessor, like SASS, SCSS or Stylus
+    -->
+
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Muli:400,300' type='text/css'>
+
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/styles/animate.min.css">
+    <link rel="stylesheet" href="/assets/styles/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/styles/demo.css">
+    <link rel="stylesheet" href="/assets/styles/importer.css">
+    <link rel="stylesheet" href="/assets/styles/login-register.css">
+    <link rel="stylesheet" href="/assets/styles/material-kit.css">
+    <link rel="stylesheet" href="/assets/styles/paper-dashboard.css">
+    <link rel="stylesheet" href="/assets/styles/style.css">
+    <link rel="stylesheet" href="/assets/styles/themify-icons.css">
+    <!--STYLES END-->
+  </head>
+
+  <body ng-app="Blog" class="signup-page">
+    <div class="wrapper">
+      <div class="header header-filter" style="background-image: url('/images/city.jpg'); background-size: cover; background-position: top center;">
+        <div class="container">
+          <div class="row">
+            <%- body %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--
+        Client-side Templates
+        ========================
+
+        HTML templates are important prerequisites of modern, rich client applications.
+        To work their magic, frameworks like Backbone, Angular, Ember, and Knockout require
+        that you load these templates client-side.
+
+        By default, your Gruntfile is configured to automatically load and precompile
+        client-side JST templates in your `assets/templates` folder, then
+        include them here automatically (between TEMPLATES and TEMPLATES END).
+
+        To customize this behavior to fit your needs, just edit `tasks/pipeline.js`.
+        For example, here are a few things you could do:
+
+            + Import templates from other directories
+            + Use a different template engine (handlebars, jade, dust, etc.)
+            + Internationalize your client-side templates using a server-side
+              stringfile before they're served.
+    -->
+
+    <!--TEMPLATES-->
+    
+    <!--TEMPLATES END-->
+
+    <!--
+
+      Client-side Javascript
+      ========================
+
+      You can always bring in JS files manually with `script` tags, or asynchronously
+      on the client using a solution like AMD (RequireJS).  Or, if you like, you can
+      take advantage of Sails' conventional asset pipeline (boilerplate Gruntfile).
+
+      By default, files in your `assets/js` folder are included here
+      automatically (between SCRIPTS and SCRIPTS END).  Both JavaScript (.js) and
+      CoffeeScript (.coffee) are supported. In production, your scripts will be minified
+      and concatenated into a single file.
+
+      To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
+      For example, here are a few things you could do:
+
+          + Change the order of your scripts
+          + Import scripts from other directories
+          + Use a different preprocessor, like TypeScript
+
+    -->
+
+    <script src="https://code.angularjs.org/1.5.6/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.5.6/angular-resource.js"></script>
+    <!--SCRIPTS-->
+    <script src="/assets/js/dependencies/sails.io.js"></script>
+    <script src="/assets/js/angular/angular.min.js"></script>
+    <script src="/assets/js/app_angular/app.js"></script>
+    <script src="/assets/js/app_angular/b_services/service_blog.js"></script>
+    <script src="/assets/js/app_angular/b_services/service_entrada.js"></script>
+    <script src="/assets/js/app_angular/controllers/controller_blog.js"></script>
+    <script src="/assets/js/app_angular/controllers/controller_categoria.js"></script>
+    <script src="/assets/js/app_angular/controllers/controller_evento.js"></script>
+    <script src="/assets/js/app_angular/controllers/controller_home.js"></script>
+    <script src="/assets/js/app_angular/controllers/controller_perfil.js"></script>
+    <script src="/assets/js/app_angular/filters/filter_capitalize.js"></script>
+    <script src="/assets/js/forms/ajquery/jquery.min.js"></script>
+    <script src="/assets/js/forms/bootstrap-checkbox-radio.js"></script>
+    <script src="/assets/js/forms/bootstrap-datepicker.js"></script>
+    <script src="/assetsjs/forms/bootstrap-notify.js"></script>
+    <script src="/assets/js/forms/bootstrap.min.js"></script>
+    <script src="/assets/js/forms/chartist.min.js"></script>
+    <script src="/assets/js/forms/demo.js"></script>
+    <script src="/assets/js/forms/login-register.js"></script>
+    <script src="/assets/js/forms/material-kit.js"></script>
+    <script src="/assets/js/forms/material.min.js"></script>
+    <script src="/assets/js/forms/moment-with-locales.min.js"></script>
+    <script src="/assets/js/forms/nouislider.min.js"></script>
+    <script src="/assets/js/forms/paper-dashboard.js"></script>
+    <script src="/assets/js/socket/socket_sails.js"></script>
+    <!--SCRIPTS END-->
+
+    <script type="text/javascript">
+      $().ready(function() {
+        // the body of this function is in assets/material-kit.js
+        $(window).on('scroll', materialKit.checkScrollForTransparentNavbar);
+      });
+    </script>
+  </body>
+</html>

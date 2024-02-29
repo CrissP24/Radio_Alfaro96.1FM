@@ -1,0 +1,64 @@
+<% if (flash && flash.err) { %>
+  <p>
+    <ul class="collection">
+      <% Object.keys(flash.err).forEach(function (error) { %>
+        <li class="collection-item">
+          <%= JSON.stringify(flash.err[error]) %>
+        </li>
+      <% }) %>
+    </ul>
+  </p>
+<% } %>
+
+<form action="/usuario/create" method="post">
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input name="email" type="email" class="mdl-textfield__input">
+    <label class="mdl-textfield__label" for="sample3">Email...</label>
+  </div>
+  <br>
+
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input name="nombres" type="text" class="mdl-textfield__input">
+    <label class="mdl-textfield__label" for="sample3">Nombres...</label>
+  </div>
+  <br>
+
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input name="apellidos" type="text" class="mdl-textfield__input">
+    <label class="mdl-textfield__label" for="sample3">Apellidos...</label>
+  </div>
+  <br>
+
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input name="nick" type="text" class="mdl-textfield__input">
+    <label class="mdl-textfield__label" for="sample3">Nick...</label>
+  </div>
+  <br>
+
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input name="fecha_nacimiento" type="date" class="mdl-textfield__input">
+    <label class="mdl-textfield__label" for="sample3">Fecha de nacimiento...</label>
+  </div>
+  <br>
+
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input name="contrasenia" type="text" class="mdl-textfield__input">
+    <label class="mdl-textfield__label" for="sample3">Contraseña...</label>
+  </div>
+  <br>
+
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input name="contrasenia_confirmacion" type="text" class="mdl-textfield__input">
+    <label class="mdl-textfield__label" for="sample3">Confirme su contraseña...</label>
+  </div>
+  <br>
+
+  <div class="mdl-textfield mdl-js-textfield">
+    <textarea name="biografia" class="mdl-textfield__input" type="text" rows= "3" id="sample5" ></textarea>
+    <label class="mdl-textfield__label" for="sample5">Biografia...</label>
+  </div>
+
+  <input type='hidden' name='_csrf' value='<%= _csrf %>'>
+
+  <button name="action" type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Registrar</button>
+</form>

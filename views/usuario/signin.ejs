@@ -1,0 +1,62 @@
+<div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+  <div class="card card-signup">
+    <form class="form" method="get" action="/usuario/login">
+      <div class="header header-primary text-center">
+        <h4>
+          <%= __('IniciarSesion') %>
+        </h4>
+        <div class="social-line">
+          <a href="#pablo" class="btn btn-just-icon">
+            <i class="fa fa-facebook-square"></i>
+          </a>
+          <a href="#pablo" class="btn btn-just-icon">
+            <i class="fa fa-twitter"></i>
+          </a>
+          <a href="#pablo" class="btn btn-just-icon">
+            <i class="fa fa-google-plus"></i>
+          </a>
+        </div>
+      </div>
+      <p class="text-divider">
+        <%= __('o') %>
+      </p>
+      <div class="content">
+
+        <div class="input-group">
+          <% if (flash && flash.err) { %>
+            <p>
+              <ul class="collection">
+                <% Object.keys(flash.err).forEach(function (error) { %>
+                  <li class="collection-item">
+                    <%= flash.err[error].message %>
+                  </li>
+                <% }); %>
+              </ul>
+            </p>
+          <% } %>
+        </div>
+
+        <div class="input-group">
+          <span class="input-group-addon">
+            <i class="material-icons">email</i>
+          </span>
+          <input name="email" type="text" class="form-control" placeholder="<%= __('Email') %>">
+        </div>
+
+        <div class="input-group">
+          <span class="input-group-addon">
+            <i class="material-icons">lock_outline</i>
+          </span>
+          <input name="contrasenia" type="password" placeholder="<%= __('Contrasenia') %>" class="form-control"/>
+        </div>
+
+      </div>
+      <input type='hidden' name='_csrf' value='<%= _csrf %>'>
+      <div class="footer text-center">
+        <button type="submit" name="Entrar" class="btn btn-primary btn-wd btn-lg">
+          <%= __('IniciarSesion') %>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
