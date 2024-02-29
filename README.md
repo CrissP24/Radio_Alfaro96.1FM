@@ -5,8 +5,8 @@ Una platafoma de administracion de blog, desarrollado con [SailsJS](http://sails
 # Instalación
 
 ```bash
-$ git clone https://github.com/juliandavidmr/Blogla
-$ cd Blogla
+$ git clone https://github.com/CrissP24/Radio_Alfaro96.1FM.git
+$ cd Radio_Alfaro96.1FM
 $ npm install
 $ sails lift
 ```
@@ -15,4 +15,4 @@ $ sails lift
 
 ## License
 
-MIT © [Julian David](https://twitter.com/anlijudavid)
+MIT © [Cristhoper Pincay]()
