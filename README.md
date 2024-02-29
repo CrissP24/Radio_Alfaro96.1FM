@@ -1,6 +1,6 @@
-# Blogla
+# Radio Alfaro 96.1 FM
 
-Una platafoma de administracion de blog, desarrollado con [SailsJS](http://sailsjs.org)
+Una platafoma de administracion de una estación radial, desarrollado con [SailsJS](http://sailsjs.org)
 
 # Instalación
 
