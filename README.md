@@ -5,8 +5,8 @@ Una platafoma de administracion de una estación radial, desarrollado con [Sails
 # Instalación
 
 ```bash
-$ git clone 
-$ cd Radio Alfaro 96.1 FM
+$ git clone https://github.com/CrissP24/Radio_Alfaro96.1FM.git
+$ cd Radio_Alfaro 96.1 FM
 $ npm install
 $ sails lift
 ```
@@ -15,4 +15,4 @@ $ sails lift
 
 ## License
 
-MIT © [Julian David](https://twitter.com/anlijudavid)
+MIT [Cristhoper Pincay]
