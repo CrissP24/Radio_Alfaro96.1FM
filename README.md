@@ -5,8 +5,8 @@ Una platafoma de administracion de una estación radial, desarrollado con [Sails
 # Instalación
 
 ```bash
-$ git clone https://github.com/juliandavidmr/Blogla
-$ cd Blogla
+$ git clone 
+$ cd Radio Alfaro 96.1 FM
 $ npm install
 $ sails lift
 ```
